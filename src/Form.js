@@ -50,14 +50,13 @@ class Form extends Component {
     };
 
     render() {
-        //const { name, job } = this.state;
-
         return (
             <form onSubmit={this.onFormSubmit}>
                 <label htmlFor="name">Name</label>
                 <input
                     className={
-                        "input " + (this.state.errors["name"] ? "has-error" : "")
+                        "input " +
+                        (this.state.errors["name"] ? "has-error" : "")
                     }
                     type="text"
                     name="name"
