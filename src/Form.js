@@ -1,91 +1,91 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+
+const FormField = ({ id, label, value, errors = {}, handleChange }) => (
+  <>
+    <label htmlFor={id}>{label}</label>
+    <input
+      className={`input ${errors[id] ? 'has-error' : ''}`}
+      type="text"
+      name={id}
+      id={id}
+      value={value}
+      onChange={handleChange}
+    />
+    <span className={`error-message ${id}`}>{errors[id]}</span>
+    <br />
+  </>
+);
 
 class Form extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.initialState = {
-            name: "",
-            job: "",
-            errors: {},
-        };
-
-        this.state = this.initialState;
-    }
-
-    handleChange = (event) => {
-        const { name, value } = event.target;
-
-        this.setState({
-            [name]: value,
-        });
+    this.initialState = {
+      name: '',
+      job: '',
+      errors: {},
     };
 
-    handleValidation() {
-        let formIsValid = true;
-        let errors = {};
+    this.state = this.initialState;
+  }
 
-        if (this.state.name === "") {
-            formIsValid = false;
-            errors["name"] = "Enter a name.";
-        }
+  handleChange = (event) => {
+    const { name, value } = event.target;
 
-        if (this.state.job === "") {
-            formIsValid = false;
-            errors["job"] = "Enter a job.";
-        }
+    this.setState({
+      [name]: value,
+    });
+  };
 
-        this.setState({ errors: errors });
+  handleValidation() {
+    let formIsValid = true;
+    let errors = {};
 
-        return formIsValid;
+    if (this.state.name === '') {
+      formIsValid = false;
+      errors['name'] = 'Enter a name.';
     }
 
-    onFormSubmit = (event) => {
-        event.preventDefault();
-
-        if (this.handleValidation()) {
-            this.props.handleSubmit(this.state);
-            this.setState(this.initialState);
-        }
-    };
-
-    render() {
-        return (
-            <form onSubmit={this.onFormSubmit}>
-                <label htmlFor="name">Name</label>
-                <input
-                    className={
-                        "input " +
-                        (this.state.errors["name"] ? "has-error" : "")
-                    }
-                    type="text"
-                    name="name"
-                    id="name"
-                    value={this.state.name}
-                    onChange={this.handleChange}
-                />
-                <span className="error-message name">
-                    {this.state.errors["name"]}
-                </span>
-                <label htmlFor="job">Job</label>
-                <input
-                    className={
-                        "input " + (this.state.errors["job"] ? "has-error" : "")
-                    }
-                    type="text"
-                    name="job"
-                    id="job"
-                    value={this.state.job}
-                    onChange={this.handleChange}
-                />
-                <span className="error-message job">
-                    {this.state.errors["job"]}
-                </span>
-                <br />
-                <button type="submit">Submit</button>
-            </form>
-        );
+    if (this.state.job === '') {
+      formIsValid = false;
+      errors['job'] = 'Enter a job.';
     }
+
+    this.setState({ errors: errors });
+
+    return formIsValid;
+  }
+
+  onFormSubmit = (event) => {
+    event.preventDefault();
+
+    if (this.handleValidation()) {
+      this.props.handleSubmit(this.state);
+      this.setState(this.initialState);
+    }
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.onFormSubmit}>
+        <FormField
+          id="name"
+          label="Name"
+          value={this.state.name}
+          errors={this.state.errors}
+          handleChange={this.handleChange}
+        />
+        <FormField
+          id="job"
+          label="Job"
+          value={this.state.job}
+          errors={this.state.errors}
+          handleChange={this.handleChange}
+        />
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
 }
 
 export default Form;
