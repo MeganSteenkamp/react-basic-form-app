@@ -18,7 +18,10 @@ const TableHeader: React.FC = () => {
   );
 };
 
-const TableBody: React.FC<IProperties> = ({ characterData, removeCharacter }: IProperties) => {
+const TableBody: React.FC<IProperties> = ({
+  characterData,
+  removeCharacter,
+}) => {
   const rows = characterData.map((row, index) => {
     return (
       <tr key={index}>
@@ -34,7 +37,7 @@ const TableBody: React.FC<IProperties> = ({ characterData, removeCharacter }: IP
   return <tbody>{rows}</tbody>;
 };
 
-const Table: React.FC<IProperties> = ({ characterData, removeCharacter }: IProperties) => {
+const Table: React.FC<IProperties> = ({ characterData, removeCharacter }) => {
   return (
     <table>
       <TableHeader />
