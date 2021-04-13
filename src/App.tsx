@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { useState } from 'react';
 import Table from './Table';
 import Form from './Form';
 
@@ -7,7 +7,7 @@ export interface ICharacter {
   job: string;
 }
 
-export const App: React.FC = (): ReactElement => {
+export const App: React.FC = () => {
   const [characters, setState] = useState<Array<ICharacter>>([]);
 
   const removeCharacter = (index: number) => {

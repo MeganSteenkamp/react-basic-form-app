@@ -1,3 +1,4 @@
+import React from 'react';
 import { ICharacter } from './App';
 
 interface IProperties {
@@ -5,7 +6,7 @@ interface IProperties {
   removeCharacter: (index: number) => void;
 }
 
-const TableHeader = () => {
+const TableHeader: React.FC = () => {
   return (
     <thead>
       <tr>
@@ -17,7 +18,7 @@ const TableHeader = () => {
   );
 };
 
-const TableBody = ({ characterData, removeCharacter }: IProperties) => {
+const TableBody: React.FC<IProperties> = ({ characterData, removeCharacter }: IProperties) => {
   const rows = characterData.map((row, index) => {
     return (
       <tr key={index}>
@@ -33,7 +34,7 @@ const TableBody = ({ characterData, removeCharacter }: IProperties) => {
   return <tbody>{rows}</tbody>;
 };
 
-const Table = ({ characterData, removeCharacter }: IProperties) => {
+const Table: React.FC<IProperties> = ({ characterData, removeCharacter }: IProperties) => {
   return (
     <table>
       <TableHeader />
