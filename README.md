@@ -1,18 +1,17 @@
-# React Tutorial
+# React Fundamentals
 
-Learn the fundamentals of React including simple and class components, state, props, and submitting form data.
+This project is based on a tutorial by [Tania Rascia](https://www.taniarascia.com) that teaches the fundamentals of React including simple and class components, state, props, and submitting form data.
 
-### [View the demo](https://taniarascia.github.io/react-tutorial/) | [Read the tutorial](https://www.taniarascia.com/getting-started-with-react/)
+### [View the original demo](https://taniarascia.github.io/react-tutorial/) | [Read the tutorial](https://www.taniarascia.com/getting-started-with-react/)
 
-## Purpose
+## Original Tutorial
 
+The original tutorial had the following goals:
 - Learn about essential React concepts and related terms, such as Babel, Webpack, JSX, components, props, state, and lifecycle.
 - Build a very simple React app that demonstrates the above concepts.
 
-## Author
+## Modifications
 
-- [Tania Rascia](https://www.taniarascia.com) modified by Megan Steenkamp.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+This project tutorial has been adapted with the following changes: 
+- [x] Create a functional component for the form field.
+- [x] Change all class components to be functional components.
