@@ -12,6 +12,6 @@ The original tutorial had the following goals:
 
 ## Modifications
 
-This project tutorial has been adapted with the following changes: 
+This project has been adapted with the following changes: 
 - [x] Create a functional component for the form field.
 - [x] Change all class components to be functional components.
