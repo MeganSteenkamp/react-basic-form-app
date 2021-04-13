@@ -7,7 +7,7 @@ export interface ICharacter {
   job: string;
 }
 
-const App: React.FC = (): ReactElement => {
+export const App: React.FC = (): ReactElement => {
   const [characters, setState] = useState<Array<ICharacter>>([]);
 
   const removeCharacter = (index: number) => {
@@ -32,5 +32,3 @@ const App: React.FC = (): ReactElement => {
     </div>
   );
 };
-
-export default App;
