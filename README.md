@@ -15,3 +15,5 @@ The original tutorial had the following goals:
 This project has been adapted with the following changes: 
 - [x] Create a functional component for the form field.
 - [x] Change all class components to be functional components.
+- [x] Change project to be TypeScript.
+- [ ] Create custom stylesheet
