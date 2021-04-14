@@ -25,8 +25,8 @@ const TableBody: React.FC<IProperties> = ({
   const rows = characterData.map((row, index) => {
     return (
       <tr key={index}>
-        <td>{row.name}</td>
-        <td>{row.job}</td>
+        <td className="name">{row.name}</td>
+        <td className="job">{row.job}</td>
         <td>
           <button onClick={() => removeCharacter(index)}>Delete</button>
         </td>
