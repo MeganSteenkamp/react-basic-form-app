@@ -24,18 +24,19 @@ export const App: React.FC = () => {
 
   return (
     <div className="container">
-      <div>
+      <div className="section header">
         <h1>Megan's React Tutorial</h1>
         <p>Add a character with a name and a job to the table.</p>
       </div>
-      <div className="section table">
-        <Table characterData={state} removeCharacter={removeCharacter} />
-      </div>
-      <div>
-        <h3>Add New Character</h3>
-      </div>
-      <div className="section form">
-        <Form handleSubmit={handleSubmit} />
+      <div className="section body">
+        <div className="form">
+          <h3>Add New Character</h3>
+          <Form handleSubmit={handleSubmit}></Form>
+        </div>
+        <div className="table">
+          <h3>Characters</h3>
+          <Table characterData={state} removeCharacter={removeCharacter} />
+        </div>
       </div>
     </div>
   );

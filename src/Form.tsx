@@ -45,8 +45,7 @@ const FormField: React.FC<IFormField> = ({
         value={value}
         onChange={handleChange}
       />
-      <span className={`error-message ${id}`}>{errors[id]}</span>
-      <br />
+      <label className={`error-message ${id}`}>{errors[id]}</label>
     </>
   );
 };
