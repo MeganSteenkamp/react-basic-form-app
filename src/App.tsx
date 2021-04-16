@@ -22,6 +22,21 @@ export const App: React.FC = () => {
     setState([...state, character]);
   };
 
+  if (state.length === 0) {
+    return (<div className="container">
+    <div className="section header">
+      <h1>Megan's React Tutorial</h1>
+      <p>Add a character with a name and a job to the table.</p>
+    </div>
+    <div className="section body">
+      <div className="form">
+        <h3>Add New Character</h3>
+        <Form handleSubmit={handleSubmit}></Form>
+      </div>
+    </div>
+  </div>)
+  }
+
   return (
     <div className="container">
       <div className="section header">

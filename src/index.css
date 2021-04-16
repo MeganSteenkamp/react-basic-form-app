@@ -123,6 +123,7 @@ form label {
 input {
   width: 100%;
   font-size: 1em;
+  color: var(--main-text-body-color);
   background: transparent;
   border: 1px solid darkgrey;
   border-style: solid;
@@ -240,7 +241,7 @@ input:focus {
   }
 
   .form {
-    width: 40%;
+    width: 100%;
     background: var(--main-color-light-grey);
     border-radius: 10px;
     margin-right: 1%;
@@ -258,8 +259,8 @@ input:focus {
   }
 
   .table {
+    width: 100%;
     table-layout: fixed;
-    width: 60%;
     background: var(--main-color-light-grey);
     border-radius: 10px;
     margin-left: 1%;
